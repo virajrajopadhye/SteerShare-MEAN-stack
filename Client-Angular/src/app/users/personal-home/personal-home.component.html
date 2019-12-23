@@ -1,0 +1,79 @@
+  <div class="container">
+    <div class="row row-sm mg-t-20">
+      <div class="col-lg-8">
+        <div class="card card-profile">
+          <div class="card-body">
+            <div class="media">
+              <img src='http://localhost:3000/users/profileImg/{{currentUser.profileImgName}}' onerror="this.style.display='none'">
+              <div class="media-body">
+                <h3 class="card-profile-name">Hello, {{currentUser.firstName}} {{currentUser.lastName}} </h3>
+                </div><!-- media-body -->
+            </div><!-- media -->
+          </div><!-- card-body -->
+        </div><!-- card -->
+
+        <div class="card card-experience mg-t-20">
+          <div class="card-body">
+            <div class="slim-card-title">Registered Cars</div>
+            <div class="media">
+              <div class="experience-logo">
+                <i class="ion-md-car"></i>
+              </div><!-- experience-logo -->
+              <div class="media-body" *ngIf="currentCar">
+                <h6 class="position-name">{{currentCar.model}} - {{currentCar.plate}}</h6>
+                <p class="position-company">{{currentCar.brand}}</p>
+                <p class="position-year">{{currentCar.color}}</p>
+              </div><!-- media-body -->
+            </div><!-- media -->
+          </div><!-- card-body -->
+          <div class="card-footer" *ngIf="currentCar">
+            <a  *ngIf="currentCar" routerLink="/update-car">Update Car Details</a>
+          </div><!-- card-footer -->
+          <div class="card-footer" *ngIf="!currentCar">
+              <a  *ngIf="!currentCar" routerLink="/car">Register Car</a>
+            </div><!-- card-footer -->
+        </div><!-- card -->
+
+        <div class="card card-experience mg-t-20">
+          <div class="card-body">
+            <div class="slim-card-title">Manage Rides</div>
+            <div class="media"  *ngFor="let ride of userRides">
+              <div class="experience-logo">
+                <i class="ion-md-switch"></i>
+              </div><!-- experience-logo -->
+              <div class="media-body">
+                <h6><a>{{ride.from}} - {{ride.to}}</a></h6>
+                <p>Driver Details : {{ride.driversusername}}</p>
+                <p>Ride Start Date : {{ride.travel_date}}</p>
+                <p>Ride Start Time : {{ride.travel_time}}</p>
+              </div><!-- media-body -->
+              <button type="submit" (click)="deleteRides(ride)" class="btn btn-primary bd-0">Cancel Your Ride</button>
+            </div><!-- media -->
+          </div><!-- card-body -->
+        </div><!-- card -->
+
+        <div class="card card-experience mg-t-50">
+        </div>
+      </div><!-- col-8 -->
+
+      <div class="col-lg-4 mg-t-20 mg-lg-t-0">
+        <div class="card card-connection">
+          <div class="row row-xs">
+            <div class="col-4 tx-primary">{{userPosts.length}}</div>
+            <div class="col-8">Total Ride Posted
+            </div>
+          </div><!-- row -->
+          <hr>
+          <div class="row row-xs">
+            <div class="col-4 tx-purple">{{userRides.length}}</div>
+            <div class="col-8">
+              Total Ride Booked
+            </div>
+          </div><!-- row -->
+        </div><!-- card -->
+
+
+
+      </div><!-- col-4 -->
+    </div><!-- row -->
+  </div><!-- container -->

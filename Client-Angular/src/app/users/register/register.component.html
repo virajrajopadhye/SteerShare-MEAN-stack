@@ -1,0 +1,54 @@
+﻿<body>
+
+<div class="d-md-flex flex-row-reverse">
+  <div class="signin-right">
+
+    <div class="signin-box">
+      <h2 class="signin-title-primary">Welcome back!</h2>
+      <h3 class="signin-title-secondary">Sign in to continue.</h3>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="First Name" formControlName="firstName">
+        <div class="validation-feedback" *ngIf="submitted && this.formControls.firstName.invalid">First name is required</div>
+      </div><!-- form-group -->
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+        <div class="validation-feedback" *ngIf="submitted && this.formControls.lastName.invalid">Last name is required</div>
+      </div><!-- form-group -->
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter your email" formControlName="username">
+        <div class="validation-feedback" *ngIf="submitted && this.formControls.username.invalid">Email is required</div>
+      </div><!-- form-group -->
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Enter your password" formControlName="password">
+        <div class="validation-feedback" *ngIf="submitted && this.formControls.password.invalid"> Password has to be at least digits or passwords</div>
+      </div><!-- form-group -->
+      <div class="form-group">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="profileImg" formControlName="profileImage">
+        <label class="custom-file-label custom-file-label-primary" for="customFile">Choose file</label>
+        <div class="validation-feedback" *ngIf="submitted && this.formControls.profileImage.invalid">Profile Image is required</div>
+      </div><!-- custom-file -->
+      </div>
+      <button class="btn btn-primary btn-block btn-signin">Register</button>
+      </form>
+      <p class="mg-t-20 mg-b-0">Already have an account? <a href="login">Sign In</a></p>
+    </div>
+
+  </div><!-- signin-right -->
+  <div class="signin-left">
+    <div class="signin-box">
+      <h2 class="slim-logo" id ="italic"><a href="login">SteerShare<span>.</span></a></h2>
+
+      <p>We are excited to launch our new company and product. After being featured in too many magazines to mention and having created an online stir, we know that SteerShare is going to be big. We also hope to win Startup Fictional Business of the Year this year.</p>
+
+      <p>Browse our site and see for yourself why you need SteerShare.</p>
+
+      <p><a href="#" class="btn btn-outline-secondary pd-x-25">Learn More</a></p>
+
+      <p class="tx-12">&copy; Copyright 2019. All Rights Reserved. Made With <i class="ion-md-heart"></i></p>
+    </div>
+  </div><!-- signin-left -->
+</div><!-- d-flex -->
+
+</body>

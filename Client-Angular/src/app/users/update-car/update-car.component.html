@@ -1,0 +1,47 @@
+<div class = "container">
+  <div class="row row-sm mg-t-20">
+    <div class="col-lg-12">
+      <div class="section-wrapper">
+        <label class="section-title">UPDATE REGISTERED CAR</label>
+        <p class="mg-b-20 mg-sm-b-40">Innovation to Travel.</p>
+        <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+          <div class="row mg-t-20">
+            <label class="col-sm-4 form-control-label"> Brand : <span class="tx-danger">*</span></label>
+            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+              <input type="text" formControlName="brand" class="form-control" placeholder="Enter Car Brand" [(ngModel)]="userCar.brand">
+              <div class="validation-feedback" *ngIf="submitted && this.formControls.brand.invalid">Brand is required</div>
+            </div>
+          </div>
+          <div class="row mg-t-20">
+            <label class="col-sm-4 form-control-label"> Model : <span class="tx-danger">*</span></label>
+            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+              <input type="text" formControlName="model" class="form-control" placeholder="Enter Car Model" [(ngModel)]="userCar.model">
+              <div class="validation-feedback" *ngIf="submitted && this.formControls.model.invalid">Model is required</div>
+            </div>
+          </div>
+          <div class="row mg-t-20">
+            <label class="col-sm-4 form-control-label"> Color : <span class="tx-danger">*</span></label>
+            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+              <select formControlName="color" class="form-control" [(ngModel)]="userCar.color">
+                <option value="" disabled>Choose the color of your car</option>
+                <option *ngFor="let color of colors">{{color}}</option>
+              </select>
+              <div class="validation-feedback" *ngIf="submitted && this.formControls.color.invalid">Color is required</div>
+            </div>
+          </div>
+          <div class="row mg-t-20">
+            <label class="col-sm-4 form-control-label"> Plate Number : <span class="tx-danger">*</span></label>
+            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+              <input type="text" minlength="5" maxlength="7" formControlName="plate" class="form-control" placeholder="Enter Plate Number" [(ngModel)]="userCar.plate">
+              <div class="validation-feedback" *ngIf="submitted && this.formControls.plate.invalid">Plate Number should consist of uppercase and digits</div>
+            </div>
+          </div>
+          <div class="form-layout-footer mg-t-30">
+            <button type="submit" class="btn btn-primary bd-0">Update Car</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

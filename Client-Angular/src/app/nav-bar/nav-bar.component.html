@@ -1,0 +1,66 @@
+<!-- main navigation bar -->
+
+
+<body>
+<div class="slim-header">
+  <div class="container">
+    <div class="slim-header-left">
+      <h2 class="slim-logo" id= "italic"><a href="index-2.html">SteerShare<span>.</span></a></h2>
+    </div><!-- slim-header-left -->
+    <div class="slim-header-right" *ngIf="!loggedin">
+      <a href=# class="nav-link" routerLink="login"><i class="ion-md-person"></i>&nbsp;Login</a>
+    </div>
+    <div class="slim-header-right" *ngIf="loggedin">
+      <div class="dropdown dropdown-c">
+        <a class="logged-user" data-toggle="dropdown">
+          <img src="http://localhost:3000/users/profileImg/{{currentUser.profileImgName}}" alt="">
+          <span><a>{{this.currentUser.firstName}}</a></span>&nbsp;
+          <i class="fa fa-angle-down"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <nav class="nav">
+            <a href = #  class="nav-link" routerLink="personal_home"><i class="ion-md-person"></i>&nbsp;View Profile</a>
+
+            <a routerLink="" (click)="this.userService.logout()" class="nav-link"><i class="ion-md-power"></i>&nbsp;Logout</a>
+          </nav>
+        </div><!-- dropdown-menu -->
+      </div><!-- dropdown -->
+    </div><!-- header-right -->
+  </div><!-- container -->
+</div><!-- slim-header -->
+
+<div class="slim-navbar">
+  <div class="container">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="">
+          <i class="ion-md-home"></i>
+          &nbsp;
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="ifLoggedIn($event)" routerLink="post">
+          <i class="ion-md-paper-plane"></i>
+          &nbsp;
+          <span>Post Ride</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='search'>
+          <i class="ion-md-search"></i>
+          &nbsp;
+          <span>Search Ride</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="ifLoggedInchat($event)" id="chat">
+          <i class="ion-md-chatbubbles"></i>
+          &nbsp;
+          <span>Chat</span>
+        </a>
+      </li>
+    </ul>
+  </div><!-- container -->
+</div><!-- slim-navbar -->
+</body>

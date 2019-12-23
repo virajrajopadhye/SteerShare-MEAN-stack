@@ -1,0 +1,18 @@
+<div class="signin-wrapper">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="signin-box">
+      <h2 class="slim-logo" id="italic"><a href="index-2.html">SteerShare<span>.</span></a></h2>
+      <h2 class="signin-title-primary">Welcome back!</h2>
+      <h3 class="signin-title-secondary">Sign in to continue.</h3>
+
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter your email" formControlName="username">
+      </div><!-- form-group -->
+      <div class="form-group mg-b-50">
+        <input type="password" class="form-control" formControlName="password" placeholder="Enter your password">
+      </div><!-- form-group -->
+      <button class="btn btn-primary btn-block btn-signin" [disabled]="loginForm.invalid">Login</button>
+      <p class="mg-b-0">Don't have an account? <a routerLink="/register">Sign Up</a></p>
+    </div><!-- signin-box -->
+  </form>
+</div><!-- signin-wrapper -->

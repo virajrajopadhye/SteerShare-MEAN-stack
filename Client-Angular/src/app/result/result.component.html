@@ -1,0 +1,25 @@
+<!-- Result component HTML -->
+
+<div class = "container">
+<div class="section-wrapper mg-t-20">
+  <label class="section-title">SteerShare Rides</label>
+  <p class="mg-b-20 mg-sm-b-40">Innovation to Travel.</p>
+  <div class="row">
+    <div class="col-md-8 col-lg-12">
+      <div class="list-group">
+        <div class="list-group-item d-block pd-y-20" *ngFor="let post of posts">
+          <h6 class="lh-3 mg-b-10"><a class="tx-inverse hover-primary section-title">SteerShare Ride Starts on {{post.travel_date}} <br/> <br/>Time : {{post.travel_time}} hrs.</a></h6>
+          <p class="tx-13 mg-b-0" >{{post.description}}</p>
+          <div class="d-flex justify-content-between align-items-center tx-12 mg-b-10">
+            <span class="tx-info">{{post.from}} - {{post.to}} </span>
+            <span>Cost : ${{post.price}}</span>
+          </div><!-- d-flex -->
+          <div class="form-layout-footer mg-t-20">
+            <button type="submit" id="book" [routerLink]="['/confirmbooking', post.id]" routerLinkActive="router-link-active" class="btn btn-primary bd-0">Book SteerShare</button>
+          </div><!-- form-layout-->
+        </div><!-- list-group-item -->
+      </div><!-- list-group -->
+    </div><!-- col-6 -->
+  </div><!-- row -->
+</div><!-- section-wrapper -->
+</div>
