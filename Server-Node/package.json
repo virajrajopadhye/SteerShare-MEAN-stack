@@ -18,9 +18,9 @@
   "homepage": "https://github.com/neu-mis-info6150-fall-2019/final-project-script-magnets#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "form-data": "^3.0.0",
     "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
